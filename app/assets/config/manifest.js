@@ -6,3 +6,7 @@
 
 // Orchid engine's manifest: orchid/app/assets/config/orchid/manifest.js
 //= link orchid/manifest.js
+
+// Vender assets
+//= link leaflet.css
+//= link leaflet.js

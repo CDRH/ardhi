@@ -1,0 +1,29 @@
+<%# overriding the search_preset template with
+some extra JS and a map div instead of item list %>
+
+<% @ext_js = add_assets(@ext_js, "leaflet") %>
+<% @ext_css = add_assets(@ext_css, "leaflet") %>
+
+<script>
+  var json = <%= sanitize @json %>;
+</script>
+<%# have to include this after variable set %>
+<%= javascript_include_tag("map") %>
+
+
+<h1><%= @content_label || @title %></h1>
+
+<div class="row search_form search_preset search_preset_<%= @preset_class %>">
+
+  <%# do not display any facet options or summary boxes for this view %>
+
+  <%= render_overridable "items", "search_preset_text" %>
+  <%= render_overridable "items", "sort_and_page_ui" %>
+
+  <!-- search results section -->
+  <%= render_overridable "items", "search_res_count" %>
+
+  <div id="map"></div>
+
+  <%= render_overridable "items", "sort_and_page_ui" %>
+</div>
