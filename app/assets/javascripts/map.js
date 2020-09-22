@@ -36,14 +36,6 @@ window.addEventListener('load', function () {
     }
   }
 
-  // flickr's embed code has a bunch of extra code we don't want,
-  // since we only need the URL to the actual image. Use a regular
-  // expression to parse out the URL or return nothing if it didn't work
-  function flickrUrl(image) {
-    var capture = image.match(/<img src=\"(?<url>[^\s]*)\" /);
-    return (capture) ? capture.groups["url"] : ""
-  }
-
   // for each feature (point, line, polygon) in the geojson,
   // build some HTML with the properties and add it as a popup
   function onEachFeature(feature, layer) {
