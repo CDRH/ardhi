@@ -87,6 +87,38 @@ window.addEventListener('load', function () {
 
   }).addTo(map);
 
+  // note this is using the TEAA basemaps
+  function create_tile_layer(layer) {
+    return new L.TileLayer.WMS("https://cdrhdev1.unl.edu/geoserver/gwc/service/wms", {
+      layers: "teaa:"+layer,
+      format: "image/png",
+      transparent: true
+    });
+  };
+
+  // add raster basemaps
+  var t50 = create_tile_layer("thomas_1850");
+  var s91 = create_tile_layer("stie_1891");
+  var a95 = create_tile_layer("andre_1895");
+  var a05 = create_tile_layer("andre_1905");
+  // only add one map to begin with
+  // map.addLayer(s91);
+
+  // primary layers control
+  L.control.layers(
+    {
+      "1850" : t50,
+      "1891" : s91,
+      "1895" : a95,
+      "1905" : a05,
+      "current" : baseLayer
+    },
+    {},
+    {
+      collapsed: false, autoZIndex: false, sortLayers: false,
+    }
+  ).addTo(map);
+
   // read in geojson data
   // alter this code if you are switching to ajax
   var geojson = L.geoJSON(json, {
