@@ -75,8 +75,8 @@ window.addEventListener('load', function () {
 
   // Create the actual map and start it zoomed in on Lincoln
   var map = L.map("map", {
-      center: new L.LatLng(30, 12),
-      zoom: 7,
+      center: new L.LatLng(0, 13),
+      zoom: 3,
       layers: [baseLayer]
   });
 
@@ -130,6 +130,8 @@ window.addEventListener('load', function () {
   geojson.addTo(map);
 
   // zoom the map to fit whatever items are being displayed
-  map.fitBounds(geojson.getBounds());
+  // commented out because some documents only have one location
+  // and it looks a little disorienting to be that closely zoomed
+  // map.fitBounds(geojson.getBounds());
 
 });
