@@ -23,6 +23,16 @@ some extra JS and a map div instead of item list %>
   <!-- search results section -->
   <%= render_overridable "items", "search_res_count" %>
 
+  <% if @facets && @facets["title"] %>
+    <div class="well">
+      <%= link_to "All Documents", map_path %>
+      <% @facets["title"].each do |title| %>
+        | <%= link_to title.first,
+            map_path(f: ["title|#{title.first}"]) %>
+      <% end %>
+    </div>
+  <% end %>
+
   <div id="map"></div>
 
   <%= render_overridable "items", "sort_and_page_ui" %>

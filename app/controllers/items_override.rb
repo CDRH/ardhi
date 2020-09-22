@@ -14,6 +14,13 @@ ItemsController.class_eval do
 
     @json = create_geojson(@res.items)
 
+    # second query for the document facets,
+    # which assumes all docusements have unique titles,
+    # to facilitate easier toggling
+    # TODO this functionality will need internationalization
+    # once we know the languages
+    @facets = @items_api.query({"facet" => "title"}).facets
+
     # render search preset with route information
     @route_path = "map_path"
     render_overridable "items", "map"
