@@ -1,8 +1,8 @@
 <%# overriding the search_preset template with
 some extra JS and a map div instead of item list %>
 
-<% @ext_js = add_assets(@ext_js, "leaflet") %>
-<% @ext_css = add_assets(@ext_css, "leaflet") %>
+<% @ext_js = add_assets(@ext_js, %w( leaflet leaflet.markercluster ) ) %>
+<% @ext_css = add_assets(@ext_css, %w( leaflet leaflet.markercluster ) ) %>
 
 <script>
   var json = <%= sanitize @json %>;

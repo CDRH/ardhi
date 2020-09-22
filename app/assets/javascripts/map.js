@@ -25,6 +25,24 @@ window.addEventListener('load', function () {
     return html;
   }
 
+  var clusterSettings = {
+    maxClusterRadius: 0,
+    singleMarkerMode: true,
+    spiderLegPolylineOptions: {
+      // using a color that will match marker cluster
+      color: "black",
+      weight: 3,
+      opacity: 1
+    },
+    iconCreateFunction: function(cluster) {
+      return L.divIcon({
+        html: cluster.getChildCount(),
+        className: 'marker_cluster',
+        iconSize: L.point(18, 18)
+      });
+    }
+  };
+
   // turns geojson properties into something the map can understand
   // map attributes on the left, geojson properties on the right
   function drawOptions(props) {
@@ -119,7 +137,9 @@ window.addEventListener('load', function () {
     style: style
   });
 
-  geojson.addTo(map);
+  var markers = L.markerClusterGroup(clusterSettings);
+  markers.addLayer(geojson);
+  map.addLayer(markers);
 
   // zoom the map to fit whatever items are being displayed
   // commented out because some documents only have one location
