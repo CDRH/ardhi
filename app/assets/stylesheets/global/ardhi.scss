@@ -1,3 +1,17 @@
+@import "bootstrap-variables";
+
+a {
+  text-decoration: underline;
+  &:hover {
+    text-decoration-color: $brand-success;
+    text-decoration-thickness: 3px;
+  }
+}
+
+#header a, #footer a, a.btn {
+  text-decoration: none;
+}
+
 //////////////////
 //     MAP      //
 //////////////////
@@ -16,4 +30,78 @@
   opacity: .85;
   padding: 0.5px;
   text-align: center;
+}
+
+#header  {
+  background: $brand-success;
+  text-align: center;
+  
+}
+
+#header .site-title-container a:focus,
+#header .site-title-container a:hover
+{
+  text-decoration: none;
+}
+
+#header .site-title-container .site-title, 
+#header .site-title-container .site-subtitle {
+  display: block;
+  
+}
+
+#header .site-title-container .site-title {
+  font-size: 1.6em;
+color: white;
+  text-decoration: none;
+}
+
+#header .site-title-container .site-subtitle {
+  font-size: .9em;
+ color: white;
+  margin-bottom: .7em
+}
+
+#header .navbar.navbar-default {}
+
+.nav > li {
+  display: inline-block;
+}
+
+#header .navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+p.lead {
+  font-size: 1.2em;
+}
+
+#footer {
+  background-color: $gray-base;
+  color: #fff;
+  padding: 2em;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#body-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
+
+#content-wrapper, .home_container {
+  flex-grow: 1;
+}
+
+#header .navbar {
+  margin-bottom: 0;
+}
+
+#header {
+  margin-bottom: 2em;
 }

@@ -3,26 +3,28 @@ $bootstrap-sass-asset-helper: false !default;
 // Variables
 // --------------------------------------------------
 
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-base:              #253133 !default;
+$gray-base:              #011528 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
 $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$light-base: #d3dbde;
+$light-base: #F4F3EE;
 $light-lighter: lighten($light-base, 11%);
 
-$brand-primary:         #0f2f87 !default; //dark blue
-$brand-success:         #3c9d64 !default; //green old #5A9D76
-$brand-info:            #447984 !default; //blue
-$brand-warning:         #FAE579 !default; //yellow
-$brand-danger:          #D3D7D8 !default; //gray
+$brand-primary:         #1789FC !default; //bright blue
+$brand-success:         #255957 !default; //dark pine green
+$brand-info:            #B58C3A !default; //dark goldenrod
+$brand-warning:         #A65E23 !default; //darn orange
+$brand-danger:          #823038 !default; //desaturated maroon
 
 $nav-accent:            #f8f8f8 !default;
 
@@ -34,7 +36,7 @@ $nav-accent:            #f8f8f8 !default;
 //** Background color for `<body>`.
 $body-bg:               $light-base !default;
 //** Global text color on `<body>`.
-$text-color:            $gray-darker !default;
+$text-color:            $gray-base !default;
 
 //** Global textual link color.
 $link-color:            $brand-primary !default;
@@ -48,13 +50,13 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  Helvetica, Arial, sans-serif !default;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-sans-serif:  'Dosis', Helvetica, Arial, sans-serif !default;
+$font-family-serif:       'Lora', Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-serif !default;
 
-$font-size-base:          16px !default;
+$font-size-base:          18px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
@@ -71,7 +73,7 @@ $line-height-base:        1.428571429 !default; // 20/14
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
 
 //** By default, this inherits from the `<body>`.
-$headings-font-family:    inherit !default;
+$headings-font-family:    $font-family-sans-serif !default;
 $headings-font-weight:    500 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
@@ -402,7 +404,7 @@ $navbar-default-toggle-border-color:       #ddd !default;
 //=== Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color:                      lighten($gray-light, 15%) !default;
-$navbar-inverse-bg:                         #222 !default;
+$navbar-inverse-bg:                         $gray-base !default;
 $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%) !default;
 
 // Inverted navbar links
