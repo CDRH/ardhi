@@ -1,0 +1,10 @@
+<div id="map_buttons" class="">
+  <% if @facets && @facets["title"] %>
+    <div class="btn-group map-btn-group btn-group-justified" role="group" aria-label="..."> 
+      <%= link_to "All Documents", map_path + "#map_complete_container", class: "btn btn-default" %>
+      <% @facets["title"].each do |title| %>
+         <%= link_to title.first, map_path(f: ["title|#{title.first}"]) + "#map_complete_container", class: "btn btn-default" %>
+      <% end %><%# /facets.each %>
+    </div><%# /btn-group %>
+  <% end %><%# /if facets title %>
+</div><%# /map_buttons %>

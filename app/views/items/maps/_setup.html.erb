@@ -1,0 +1,61 @@
+<% @ext_js = add_assets(@ext_js, ["leaflet"] ) %>
+<% @ext_css = add_assets(@ext_css, ["leaflet", "map"] ) %> 
+
+<% @ext_js = add_assets(@ext_js, %w( leaflet leaflet.markercluster ) ) %>
+<% @ext_css = add_assets(@ext_css, %w( leaflet leaflet.markercluster ) ) %>
+
+
+
+<script>
+  var json = <%= sanitize @json %>;
+</script>
+
+<%# have to include this after variable set %>
+<%= javascript_include_tag("map") %>
+
+<h1><%= @title %></h1>
+
+<!-- search results section -->
+  <%# render_overridable "items", "search_res_count" %>
+
+   <%# render_overridable "items", "sort_and_page_ui" %>
+
+<%= render_overridable "items", "search_preset_text" %>
+
+</div><%# closing container for full screen %>
+
+<div id="map_complete_container">
+  <%= render partial: "items/maps/map_nav" %>
+
+  <div class="map_container">
+    <%# if !current_page?(action: "map_photographs") %>
+      <%# render partial: "research/maps/map_key" %>
+    <%# end %>
+
+    <div class="map_container_main">
+      <div class="map_container_map">
+        <div id="map"></div>
+      </div><%# map_container_map %>
+    </div>
+  </div> <%# /map_container %>
+</div> <%# /map_complete_container %>
+
+<div class="container"><%# reopening container %>
+
+<script>
+  // prep some variables that the map will need in JavaScript
+
+  // gets absolute path for current environment's search url
+  var searchPath = "<%= search_path %>";
+  // "to" or "á" depending on the language
+  var joiner = " <%= t("research.maps.to").downcase %> ";
+
+  // select whether this is a photo or a letter
+  <%# if current_page?(action: "map_photographs") %>
+    var label = " <%= t("research.maps.popup.photos", default: "foto(s)") %>";
+  <%# else %>
+    var label = " <%= t("research.maps.popup.letters", default: "carta(s)") %>";
+  <%# end %>
+</script>
+
+<%= javascript_include_tag "map" %>

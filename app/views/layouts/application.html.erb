@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>" <%= html_classes %>>
+  <%= render_overridable("layouts/head", "head") %>
+  <body class="<%= "language_#{I18n.locale}" %>">
+    <a href="#main-content" class="sr-only sr-only-focusable">
+      Skip to main content
+    </a>
+    <div id="body-wrapper">
+      <%= render_overridable("layouts/body", "header") %>
+      <%= render_overridable("layouts/body", "contents") %>
+      <%= render_overridable("layouts/body", "footer") %>
+    </div>
+    <div class="back_to_top">
+      <a href="#">↑</a>
+    </div>
+  </body>
+</html>

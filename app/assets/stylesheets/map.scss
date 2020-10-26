@@ -1,0 +1,211 @@
+// Flex Layout
+
+// Ken on Sidebar
+// .map_container {
+//   display: flex;
+//   flex-direction: row-reverse;
+//   width: 100vw;
+//   height: 79vh;
+// }
+
+// .map_container_main {
+//   display: flex;
+//   flex-direction: column;
+//   flex-grow: 1;
+// }
+
+// .map_container_map {
+//   display: flex;
+//   flex-direction: column;
+//   flex-grow: 1;
+// }
+
+// #map {
+//   flex-grow: 1;
+//   width: 100%;
+//   height: 79vh;
+// }
+
+// .map_container_sidebar {
+//   display: flex;
+//   flex-direction: column;
+//   min-width: 300px;
+// }
+
+// #map_container_info {
+//   flex-grow: 1;
+// }
+
+// Key on Top
+
+#map_complete_container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 20px;
+}
+
+#map_container_key {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  p {
+    padding: .3em .3em 0 .3em;
+
+  }
+  ul {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    li {
+      margin: 0 .7em;
+    }
+  }
+}
+
+#map_container_info {
+  display: none;
+}
+
+.map_container,
+.map_container_main,
+.map_container_map {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#map {
+  flex-grow: 1;
+  height: 100%;
+  min-height: 200px;
+}
+
+// Design
+
+#content-wrapper {
+  margin-bottom: .5em;
+}
+
+.map_container {
+  border: solid 5px #aaa;
+  border-right-width: 1px;
+  border-left-width: 1px;
+}
+
+#map_container_key {
+  p {
+    // background: #aaa;
+    // color: white;
+    margin: 0;
+    font-size: 1em;
+    text-align: center;
+  }
+}
+
+.map_container_sidebar {
+  background: #fff;
+}
+
+#map_container_info {
+  overflow: auto;
+}
+
+.map_feature {
+  /* TODO this needs to be looked at */
+  height: 150px;
+  overflow: auto;
+}
+
+.map_key {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: solid 1px #aaa;
+  padding: .5em;
+  li {
+    margin: 0;
+    span {
+      height: 3px;
+
+      width: 1.5em;
+      display: inline-block;
+      margin-bottom: .3em;
+    }
+  }
+}
+
+#map_container_key, #map_container_info {
+  font-size: .8em;
+}
+
+#map_container_info {
+  padding: .5em;
+}
+
+.map_key_spanish span {
+  background: #2CB3E6;
+}
+
+.map_key_mix span {
+  background: #861994;
+}
+
+.map_key_english span {
+  background: #E74E64;
+}
+
+#map_complete_container #map_buttons .btn {
+  line-height: 1.1em;
+}
+
+// queries
+
+@media only screen and (max-width: 699px) {
+  // .map_container {
+  //   display:block;
+  // }
+
+  // #map {
+  //   width: 100%;
+  //   height: 79vh;
+  // }
+
+  #map_buttons .btn {
+    font-size: .7em;
+    line-height: 1em
+  }
+
+}
+
+
+
+
+// New additions
+
+.marker_cluster {
+  background-color: #00c3ff;
+  border-radius: 50%;
+  border: 3px solid black;
+  color: black;
+  line-height: 0.8;
+  opacity: .85;
+  padding: 0.5px;
+  text-align: center;
+}
+
+.map-btn-group.btn-group-justified {
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+
+.map-btn-group * {
+  flex-grow: 2;
+}
+
+.map-btn-group.btn-group-justified > .btn,
+.map-btn-group.btn-group-justified > .btn-group {
+  width: auto;
+}
+

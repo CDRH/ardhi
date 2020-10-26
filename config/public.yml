@@ -18,7 +18,7 @@ default: &default
     media_server_dir: ardhi
     # thumbnail size, ! means not to alter ratio, then max-width, max-height
     # IIIF size syntax reference: https://iiif.io/api/image/2.1/#size
-    thumbnail_size: !200,200
+    thumbnail_size: "!200,200"
 
     # REDIRECTS / REWRITES
 
