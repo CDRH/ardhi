@@ -4,14 +4,9 @@
 <% @ext_js = add_assets(@ext_js, %w( leaflet leaflet.markercluster ) ) %>
 <% @ext_css = add_assets(@ext_css, %w( leaflet leaflet.markercluster ) ) %>
 
-
-
 <script>
   var json = <%= sanitize @json %>;
 </script>
-
-<%# have to include this after variable set %>
-<%= javascript_include_tag("map") %>
 
 <h1><%= @title %></h1>
 
@@ -28,6 +23,7 @@
   <%= render partial: "items/maps/map_nav" %>
 
   <div class="map_container">
+    <%# todo ask if we need a key %>
     <%# if !current_page?(action: "map_photographs") %>
       <%# render partial: "research/maps/map_key" %>
     <%# end %>
@@ -36,7 +32,7 @@
       <div class="map_container_map">
         <div id="map"></div>
       </div><%# map_container_map %>
-    </div>
+    </div><%# /map_container_main %>
   </div> <%# /map_container %>
 </div> <%# /map_complete_container %>
 
