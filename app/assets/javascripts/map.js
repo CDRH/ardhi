@@ -11,16 +11,9 @@ window.addEventListener('load', function () {
     // add a title if one exists
     if (props["title"]) {
       html += "<strong>" + props["title"] + "</strong>";
-    }
+      var link = path + "/item/" + props["identifier"];
+      html += "<p><a href='" + link + "'>" + props["document"] + "</a></p>";    }
 
-    html += "<ul>";
-    // iterate through all the properties and display
-    // those which are not style or title related
-    for (var key in props) {
-      html += "<li><strong>" + key + ":</strong> " + props[key] + "</li>";
-    }
-
-    html += "</ul>";
     html += "</div>";
     return html;
   }
