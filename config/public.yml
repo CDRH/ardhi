@@ -62,14 +62,6 @@ default: &default
 
   facets:
     en:
-      collection:
-        label: Collection
-        flags:
-          - search_filter
-      category:
-        label: Category
-        flags:
-          - search_filter
       date.year:
         label: Year
         flags:
@@ -77,25 +69,21 @@ default: &default
       person.name:
         label: People
         flags:
-          - search_filter
-      languages:
-        label: Language
-        flags:
-          - search_filter
-      subcategory:
-        label: Subcategory
-        flags:
-          - search_filter
+          - search_filterr
       creator.name:
-        label: Creator
-        flags:
-          - search_filter
-      format:
-        label: Format
+        label: Signatories
         flags:
           - search_filter
       places:
         label: Places
+        flags:
+          - search_filter
+      subjects:
+        label: Ethnic Groups
+        flags:
+          - search_filter
+      keywords:
+        label: Ships
         flags:
           - search_filter
 # Add fields for other languages with their language code
