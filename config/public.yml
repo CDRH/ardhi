@@ -69,7 +69,7 @@ default: &default
       person.name:
         label: People
         flags:
-          - search_filterr
+          - search_filter
       creator.name:
         label: Signatories
         flags:
