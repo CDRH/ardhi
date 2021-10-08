@@ -31,22 +31,24 @@ ItemsController.class_eval do
   def create_geojson(items)
     features = []
     items.each do |item|
-      item["spatial"].each do |spatial|
-        features << {
-          "type" => "Feature",
-          "properties" => {
-            "title" => spatial["title"],
-            "document" => item["title"],
-            "identifier" => item["identifier"]
-          },
-          "geometry" => {
-            "type" => "Point",
-            "coordinates" => [
-              spatial["coordinates"]["lon"].to_f,
-              spatial["coordinates"]["lat"].to_f
-            ]
+      if item["spatial"]
+        item["spatial"].each do |spatial|
+          features << {
+            "type" => "Feature",
+            "properties" => {
+              "title" => spatial["title"],
+              "document" => item["title"],
+              "identifier" => item["identifier"]
+            },
+            "geometry" => {
+              "type" => "Point",
+              "coordinates" => [
+                spatial["coordinates"]["lon"].to_f,
+                spatial["coordinates"]["lat"].to_f
+              ]
+            }
           }
-        }
+        end
       end
     end
     collection = {
