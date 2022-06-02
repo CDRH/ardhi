@@ -23,6 +23,12 @@ en:
     # Header subtitle
     project_subtitle: An Africana Digital Humanities Project
 
+  #################
+  # DH Roundtable #
+  #################
+  dhroundtable:
+    title: DH Roundtable
+
   #########
   # ABOUT #
   #########
