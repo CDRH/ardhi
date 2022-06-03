@@ -100,20 +100,16 @@ window.addEventListener('load', function () {
   };
 
   // add raster basemaps
-  var t50 = create_tile_layer("thomas_1850");
   var s91 = create_tile_layer("stie_1891");
   var a95 = create_tile_layer("andre_1895");
-  var a05 = create_tile_layer("andre_1905");
   // only add one map to begin with
   // map.addLayer(s91);
 
   // primary layers control
   L.control.layers(
     {
-      "1850" : t50,
       "1891" : s91,
       "1895" : a95,
-      "1905" : a05,
       "current" : baseLayer
     },
     {},
