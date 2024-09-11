@@ -6,7 +6,7 @@ ItemsController.class_eval do
 
     # query to return only souvenir documents
     options = params.permit!.deep_dup
-    options["fl"] = "identifier,title,spatial.coordinates,spatial.title"
+    options["fl"] = "identifier,title,spatial.coordinates,spatial.name"
     # TODO this may not be high enough but right now
     # there are only 6 documents so hopefully it's good for a while!
     options["num"] = 1000
@@ -36,15 +36,15 @@ ItemsController.class_eval do
           features << {
             "type" => "Feature",
             "properties" => {
-              "title" => spatial["title"],
+              "title" => spatial["name"],
               "document" => item["title"],
               "identifier" => item["identifier"]
             },
             "geometry" => {
               "type" => "Point",
               "coordinates" => [
-                spatial["coordinates"]["lon"].to_f,
-                spatial["coordinates"]["lat"].to_f
+                spatial["coordinates"][0],
+                spatial["coordinates"][1]
               ]
             }
           }
