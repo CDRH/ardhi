@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/cdrh/orchid
-  revision: d0c0c4c76034c0327ff5021623cfc50930912e19
+  revision: 40572a1a25f8e9834610f1c0be64aa3fb9056512
   branch: local_testing
   specs:
     orchid (3.1.1)
@@ -90,13 +90,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    coffee-rails (4.2.2)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.3.4)
     crass (1.0.6)
     date (3.3.4)
@@ -105,18 +98,18 @@ GEM
     ffi (1.17.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    i18n (1.14.5)
+    i18n (1.14.6)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.12.0)
+    jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jquery-rails (4.6.0)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    listen (3.0.8)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
+    listen (3.9.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.6.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -132,7 +125,7 @@ GEM
     mini_mime (1.1.5)
     mini_portile2 (2.8.7)
     minitest (5.25.1)
-    msgpack (1.7.2)
+    msgpack (1.7.3)
     net-imap (0.4.16)
       date
       net-protocol
@@ -147,9 +140,14 @@ GEM
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     public_suffix (6.0.1)
-    puma (3.12.6)
+    puma (5.6.9)
+      nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.9)
+    rack-mini-profiler (2.3.4)
+      rack (>= 1.2.0)
+    rack-proxy (0.7.7)
+      rack
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (6.1.7.8)
@@ -185,7 +183,7 @@ GEM
     rb-inotify (0.11.1)
       ffi (~> 1.0)
     regexp_parser (2.9.2)
-    rexml (3.3.7)
+    rexml (3.3.8)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -195,16 +193,14 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.24.0)
+    selenium-webdriver (4.25.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    spring (2.1.1)
-    spring-watcher-listen (2.0.1)
-      listen (>= 2.7, < 4.0)
-      spring (>= 1.2, < 3.0)
+    semantic_range (3.0.0)
+    spring (4.2.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -217,10 +213,11 @@ GEM
     thor (1.3.2)
     tilt (2.4.0)
     timeout (0.4.1)
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -230,6 +227,11 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (~> 4.0)
+    webpacker (5.4.4)
+      activesupport (>= 5.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
     websocket (1.2.11)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -242,26 +244,26 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootsnap (>= 1.1.0)
+  bootsnap (>= 1.4.4)
   bootstrap-sass (~> 3.4.1)
   byebug
-  capybara (>= 2.15)
-  coffee-rails (~> 4.2)
-  jbuilder (~> 2.5)
+  capybara (>= 3.26)
+  jbuilder (~> 2.7)
   jquery-rails (~> 4.3)
-  listen (>= 3.0.5, < 3.2)
+  listen (~> 3.3)
   orchid!
-  puma (~> 3.11)
+  puma (~> 5.0)
+  rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7)
   sassc-rails (~> 2.1)
-  selenium-webdriver
+  selenium-webdriver (>= 4.0.0.rc1)
   spring
-  spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.5)
+  turbolinks (~> 5)
   tzinfo-data
-  uglifier (>= 1.3.0)
-  web-console (>= 3.3.0)
+  web-console (>= 4.1.0)
   webdrivers
+  webpacker (~> 5.0)
 
 RUBY VERSION
    ruby 3.1.6p260
