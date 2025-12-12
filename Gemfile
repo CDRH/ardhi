@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.6'
+ruby '3.1.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.7'
@@ -61,7 +61,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'orchid', git: 'https://github.com/cdrh/orchid', branch: "local_testing"
+gem 'orchid', git: 'https://github.com/cdrh/orchid', tag: "v4.1.0"
 
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails', '~> 4.3'
